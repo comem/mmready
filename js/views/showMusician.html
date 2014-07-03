@@ -1,0 +1,30 @@
+    <div class="col-lg-4">
+        <div class="headerShowBox">
+            <h2><i class="ico-musician"></i>Musician(s)</h2> 
+        </div>
+        
+                {{#musicians}}
+                <dl>       
+                    <dt>Name</dt>
+                    <dd>{{first_name}}</dd>
+                    <dt>Scene Name</dt>
+                    <dd>{{stagename}}{{^stagename}}-{{/stagename}}</dd>
+                    {{#instruments}}
+                    <dt>Instruments</dt>
+                    <dd>{{name_de}}</dd>
+                    {{/instruments}}
+                </dl>
+                {{/musicians}}
+                {{^musicians}}
+                <dl>       
+                    <dt>Name</dt>
+                    <dd>-</dd>
+                    <dt>Scene Name</dt>
+                    <dd>-</dd>
+                    <dt>Instruments</dt>
+                    <dd>-</dd>
+                </dl>
+                {{/musicians}}
+   
+</div>
+

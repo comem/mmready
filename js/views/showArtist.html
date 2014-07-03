@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="row buttonsOptions">
+        <div class="col-lg-5 col-lg-offset-7">
+            <button id="btn-back" class="btn btn-default">
+                    <i class="ico-cancel"></i>Back to List
+               
+            </button>
+            <button id="btn-edit" class="btn btn-default">
+                <span class="ico-edit">Edit artist</span>
+            </button>
+            <button id="btn-delete" class="btn btn-default">
+                <span class="ico-delete" data-id="{{id}}">Delete artist</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{name}}</h1> 
+        </div>
+    </div>
+
+    <div class="row white">
+        <div class="col-lg-4">
+            <div class="headerShowBox">
+                <h2><i class="ico-info"></i>Information</h2> 
+            </div>
+            <dl>     
+                <dt>Name</dt>
+                <dd>{{name}}</dd>
+
+
+                <dt>Genre(s)</dt>
+                {{#genres}}
+                <dd>{{name_de}}</dd>
+                {{/genres}}
+
+            </dl>
+            {{#events}}
+            <dl>
+                <dt>Event</dt>
+                <dd>{{title_de}}{{^title_de}}-{{/title_de}}</dd>
+
+                {{#performers}}
+                <dt>heure d'arrivée </dt>
+                <dd>{{artist_hour_of_arrival}}{{^artist_hour_of_arrival}}-{{/artist_hour_of_arrival}}</dd>
+
+                <dt>Order </dt>
+                <dd>{{order}}</dd>
+
+                <dt>Is Support</dt>
+                <dd>{{is_support}}{{^is_support}}-{{/is_support}}</dd>
+                {{/performers}}
+            </dl>
+            {{/events}}
+             </div>
+         <div class="col-lg-4">
+        <div class="headerShowBox">
+            <h2><i class="ico-musician"></i>Musician(s)</h2> 
+        </div>
+        
+                {{#musicians}}
+                <dl>       
+                    <dt>Name</dt>
+                    <dd>{{first_name}}</dd>
+                    <dt>Scene Name</dt>
+                    <dd>{{stagename}}{{^stagename}}-{{/stagename}}</dd>
+                    {{#instruments}}
+                    <dt>Instruments</dt>
+                    <dd>{{name_de}}</dd>
+                    {{/instruments}}
+                </dl>
+                {{/musicians}}
+                {{^musicians}}
+                <dl>       
+                    <dt>Name</dt>
+                    <dd>-</dd>
+                    <dt>Scene Name</dt>
+                    <dd>-</dd>
+                    <dt>Instruments</dt>
+                    <dd>-</dd>
+                </dl>
+                {{/musicians}}
+   
+</div>
+
+        <div class="col-lg-4">
+            <div class="headerShowBox">
+                <h2><i class="ico-img">Images(s)</i></h2>
+            </div>
+            {{#images}}
+            <img src="http://pingouin.heig-vd.ch/rockit/{{source}}" height="50px">
+            {{/images}}
+            {{^images}}
+            <p>-</p>
+            {{/images}}
+        </div>
+            
+           
+        </div>
+   
+
+    <div class="row white">
+             
+
+        <div class="col-lg-4">
+            <div class="headerShowBox">
+                <h2><i class="ico-link"></i>Link(s)</h2> 
+            </div>
+
+            <dl> 
+                {{#links}}
+                <dt>Link name</dt>
+                <dd><a href="{{url}}">{{url}}</a></dd>
+                {{/links}}
+                {{^links}}
+                <dt>Link name</dt>
+                <dd><a href="">-</a></dd>
+                {{/links}}
+            </dl>
+
+
+        </div>
+        
+                <div class="col-lg-4">
+                     <div class="headerShowBox">
+                <h2>Short description</h2> 
+            </div>
+                    <p>{{short_description_de}}{{^short_description_de}}-{{/short_description_de}}</p>
+                </div>
+           
+           
+                <div class="col-lg-4">
+                     <div class="headerShowBox">
+                <h2>Long description</h2> 
+            </div> 
+                    <p>{{complete_description_de}}{{^complete_description_de}}-{{/complete_description_de}}</p>
+                </div>
+    </div>
+ 
+</div>
